@@ -5,13 +5,12 @@ function getUsers () {
     return JSON.parse(request.responseText)
 }
 
+
 function createRow (index) {
     const table = document.getElementsByTagName("tbody")[0];
-
-    const row = table.insertRow(index);
-
-    return row;
+    return table.insertRow(index);
 }
+
 
 function insertData (row, user) {
     const idCol = row.insertCell(0);
@@ -23,6 +22,7 @@ function insertData (row, user) {
     emailCol.innerHTML = user.email;
 }
 
+
 function main () {
     const users = getUsers();
     let index = 0;
@@ -32,6 +32,7 @@ function main () {
         insertData(row, user);
     }
 }
+
 
 main();
 
