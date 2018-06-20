@@ -30,12 +30,13 @@ function deleteRecord (row, userid) {
 
     const request = new XMLHttpRequest();
     request.open("DELETE", "https://crud-app-9987.herokuapp.com/users", false);
+    request.setRequestHeader("Content-type", "application/json");
     request.send(JSON.stringify([{id: userid}]));
 }
 
+
 function main () {
     const users = getUsers();
-    let index = 0;
     for (let i = 0; i < users.length; i++) {
         const row = createRow(i);
         const user = users[i];
