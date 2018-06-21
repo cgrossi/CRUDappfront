@@ -7,13 +7,16 @@ function main(){
 }
 
 function sendData (){
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
 
     const request = new XMLHttpRequest();
     request.open("POST", "https://crud-app-9987.herokuapp.com/users", false);
     request.setRequestHeader("Content-type", "application/json");
-    request.send(JSON.stringify([{name: name, email: email}]));
+    request.send(JSON.stringify([{name: name.value, email: email.value}]));
+
+    name.value = "";
+    email.value = "";
 }
 
 main();
