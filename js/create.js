@@ -1,9 +1,22 @@
 function main(){
     // get values user inputs
 
-    const submit = document.getElementById("submit").onclick = sendData;
+    const submit = document.getElementById("submit").onclick = sendHome;
+    const submitcreate = document.getElementById("submitcreate").onclick = sendRefresh;
+
 
     // send as post request
+}
+
+function sendRefresh () {
+    sendData();
+    window.location.reload(true);
+}
+
+function sendHome () {
+    sendData();
+    window.location.href="index.html";
+
 }
 
 function sendData (){
