@@ -1,6 +1,6 @@
 function getUsers () {
     const request = new XMLHttpRequest();
-    request.open("GET", "https://crud-app-9987.herokuapp.com/users", false);
+    request.open("GET", "https://sleepy-hamlet-24092.herokuapp.com/users", false);
     request.send();
     return JSON.parse(request.responseText)
 }
@@ -29,7 +29,7 @@ function deleteRecord (row, userid) {
     row.parentNode.removeChild(row);
 
     const request = new XMLHttpRequest();
-    request.open("DELETE", "https://crud-app-9987.herokuapp.com/users", false);
+    request.open("DELETE", "https://sleepy-hamlet-24092.herokuapp.com/users", false);
     request.setRequestHeader("Content-type", "application/json");
     request.send(JSON.stringify([{id: userid}]));
 }

@@ -24,7 +24,7 @@ function sendData (){
     const email = document.getElementById("email");
 
     const request = new XMLHttpRequest();
-    request.open("POST", "https://crud-app-9987.herokuapp.com/users", false);
+    request.open("POST", "https://sleepy-hamlet-24092.herokuapp.com/users", false);
     request.setRequestHeader("Content-type", "application/json");
     request.send(JSON.stringify([{name: name.value, email: email.value}]));
 
